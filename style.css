@@ -54,6 +54,11 @@ body {
     color: #eee;
 }
 
+.welcome-text {
+    transform: scale(50);
+    transform-origin: center;
+}
+
 .page-wrapper {
     display: none;
     overflow: hidden;

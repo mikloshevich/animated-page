@@ -20,9 +20,9 @@ function firstScreen() {
     gsap.set(rightImgWrapper, { y: '20%', x: '-50%' })
 
     const tl = gsap.timeline()
-    tl.from(welcomeText, {
+    tl.to(welcomeText, {
         duration: 3.5,
-        scale: 50, ease: "power3.out", onComplete: function() {
+        scale: 1, ease: "power3.out", onComplete: function() {
             pageWrapper.style.display = 'block'
         }
     }).to(welcomeText, { duration: 1, opacity: 0 }, 'same')
