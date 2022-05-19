@@ -242,3 +242,7 @@ function swipeDirection() {
     if (touchX < touchEndX) return 'left'
     if (touchX > touchEndX) return 'right'
 }
+
+function isTouch() {
+    return ('ontouchstart' in window)
+}
