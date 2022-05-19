@@ -44,17 +44,23 @@ function handleLinks() {
     linksAll.forEach((link, i) => {
         link.addEventListener('click', (e) => {
             e.preventDefault()
-            link.classList.add('active')
-            changeImage(i)
-            changeText(i)
-            changeBgImg(i)
-            changeLeftBg(i)
-            changeRightBg(i)
-            autoBgMove(i)
+            if (nextSlide) {
+                nextSlide = false
+                link.classList.add('active')
+                changeImage(i)
+                changeText(i)
+                changeBgImg(i)
+                changeLeftBg(i)
+                changeRightBg(i)
+                autoBgMove(i)
 
-            linksAll.forEach(link => link.classList.remove('active'))
-            link.classList.add('active')
-            counter = i
+                linksAll.forEach(link => link.classList.remove('active'))
+                link.classList.add('active')
+                counter = i
+                setTimeout(() => {
+                    nextSlide = true
+                }, 1200)
+            }
         })
     })
 }
