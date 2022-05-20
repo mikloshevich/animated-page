@@ -317,9 +317,9 @@ body {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 374px) {
     .nav-item {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .logo {

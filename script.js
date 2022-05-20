@@ -92,8 +92,6 @@ function autoBgMove(index) {
         .to(bgImageAll[index], { y: '10%', scale: 1.2 })
 }
 
-autoBgMove(0)
-
 function parallax(e) {
     const xOffset = e.clientX * 0.02
     const yOffset = e.clientY * 0.02
@@ -113,7 +111,7 @@ function changeImage(index) {
     const tl = gsap.timeline({
         defaults: {}, onComplete: function() { currentImg.classList.remove('right-img-top') }
     })
-    tl.from(nextImg, 0.5, { y: '-100%' })
+    tl.from(nextImg, 0.5, { y: '-100%' }, 0.5)
 
     currentImg.classList.remove('active')
     nextImg.classList.add('active')
@@ -127,9 +125,9 @@ function changeText(index) {
     let nextText = textAll[index]
     const tl = gsap.timeline()
     tl.to(currentText, 0.5, {
-        y: '100px', opacity: 0
-    }, 0.5)
-        .to(nextText, 0.5, { y: '-50%', opacity: 1 }, 1.5)
+        y: '50%', opacity: 0
+    })
+        .to(nextText, 0.5, { y: '-50%', opacity: 1 }, 1)
     nextText.classList.add('active')
     currentText.classList.remove('active')
 }
@@ -160,6 +158,7 @@ function changeRightBg(index) {
 }
 
 function init() {
+    autoBgMove(0)
     document.addEventListener('wheel', (e) => {
         if (e.deltaY > 0 && counter < rightImgAll.length - 1) {
             if (nextSlide) {
