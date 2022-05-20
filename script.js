@@ -90,8 +90,8 @@ function autoBgMove(index) {
             ease: "none"
         },
     })
-    tl.to(bgImageAll[index], { x: '10%', scale: 1.1 })
-        .to(bgImageAll[index], { y: '10%', scale: 1.2 })
+    tl.to(bgImageAll[index], { x: '10%', scale: 1.25 })
+        .to(bgImageAll[index], { y: '10%', scale: 1.35 })
 }
 
 function parallax(e) {
