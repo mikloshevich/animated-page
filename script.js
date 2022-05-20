@@ -12,6 +12,7 @@ const navLinksWrapper = pageWrapper.querySelector('.nav-links')
 
 let nextSlide = true
 let counter = 0
+const delay = 1500
 
 function firstScreen() {
     const welcomeScreen = document.querySelector('.welcome')
@@ -44,22 +45,22 @@ function handleLinks() {
     linksAll.forEach((link, i) => {
         link.addEventListener('click', (e) => {
             e.preventDefault()
-            if (nextSlide) {
+            if (nextSlide && !link.classList.contains('active')) {
                 nextSlide = false
-                link.classList.add('active')
                 changeImage(i)
                 changeText(i)
                 changeBgImg(i)
                 changeLeftBg(i)
                 changeRightBg(i)
                 autoBgMove(i)
+                counter = i
 
                 linksAll.forEach(link => link.classList.remove('active'))
                 link.classList.add('active')
-                counter = i
+
                 setTimeout(() => {
                     nextSlide = true
-                }, 1200)
+                }, delay)
             }
         })
     })
@@ -172,7 +173,7 @@ function init() {
                 autoBgMove(counter)
                 setTimeout(() => {
                     nextSlide = true
-                }, 1200)
+                }, delay)
             }
         } else if (e.deltaY < 0 && counter > 0) {
             if (nextSlide) {
@@ -186,7 +187,7 @@ function init() {
                 autoBgMove(counter)
                 setTimeout(() => {
                     nextSlide = true
-                }, 1200)
+                }, delay)
             }
         }
     })
@@ -217,7 +218,7 @@ function handleSwipe() {
                 autoBgMove(counter)
                 setTimeout(() => {
                     nextSlide = true
-                }, 1200)
+                }, delay)
             }
         } else if (swipeDirection() === 'right' && counter > 0) {
             if (nextSlide) {
@@ -231,7 +232,7 @@ function handleSwipe() {
                 autoBgMove(counter)
                 setTimeout(() => {
                     nextSlide = true
-                }, 1200)
+                }, delay)
             }
         }
     })

@@ -27,7 +27,7 @@ img {
 .container {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 10px;
 }
 
 
@@ -83,7 +83,7 @@ body {
 }
 
 .logo-blend {
-    background-color: #111;
+    background-color: #222;
     mix-blend-mode: multiply;
     padding: 8px 16px;
 }
@@ -166,7 +166,7 @@ body {
 }
 
 .left-bg {
-    background-color: #efddc6;
+    /* background-color: #efddc6; */
     position: absolute;
     top: 0;
     left: 0;
@@ -297,7 +297,7 @@ body {
 
 @media screen and (max-width: 460px) {
     .nav-item:not(:last-child) {
-        margin-right: 16px;
+        margin-right: 20px;
     }
 
     .logo {
