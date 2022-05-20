@@ -142,7 +142,7 @@ function changeBgImg(index) {
 function changeLeftBg(index) {
     let currentBgLeft = document.querySelector('.left-bg.active')
     let nextBgLeft = leftBgAll[index]
-    rightBgAll.forEach(el => el.classList.remove('right-bg-top'))
+    leftBgAll.forEach(el => el.classList.remove('right-bg-top'))
     currentBgLeft.classList.add('right-bg-top')
 
     const tl = gsap.timeline()
