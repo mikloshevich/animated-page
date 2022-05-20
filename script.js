@@ -205,7 +205,7 @@ function handleSwipe() {
     document.addEventListener('touchend', (e) => {
         // e.preventDefault()
         touchEndX = e.changedTouches[0].clientX
-        if (swipeDirection() === 'right' && counter < rightImgAll.length - 1) {
+        if (swipeDirection() === 'left' && counter < rightImgAll.length - 1) {
             if (nextSlide) {
                 nextSlide = false
                 counter++
@@ -219,7 +219,7 @@ function handleSwipe() {
                     nextSlide = true
                 }, 1200)
             }
-        } else if (swipeDirection() === 'left' && counter > 0) {
+        } else if (swipeDirection() === 'right' && counter > 0) {
             if (nextSlide) {
                 nextSlide = false
                 counter--
@@ -238,8 +238,8 @@ function handleSwipe() {
 }
 
 function swipeDirection() {
-    if (touchX < touchEndX) return 'left'
-    if (touchX > touchEndX) return 'right'
+    if (touchX < touchEndX) return 'right'
+    if (touchX > touchEndX) return 'left'
 }
 
 function isTouch() {
