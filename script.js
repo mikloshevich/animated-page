@@ -12,6 +12,7 @@ const navLinksWrapper = pageWrapper.querySelector('.nav-links')
 
 let nextSlide = true
 let counter = 0
+let isSwiping = false
 const delay = 1500
 
 function firstScreen() {
@@ -239,8 +240,12 @@ function handleSwipe() {
 }
 
 function swipeDirection() {
-    if (touchX < touchEndX) return 'right'
-    if (touchX > touchEndX) return 'left'
+    if (touchX < touchEndX - 6) {
+        return 'right'
+    }
+    if (touchX > touchEndX + 6) {
+        return 'left'
+    }
 }
 
 function isTouch() {
